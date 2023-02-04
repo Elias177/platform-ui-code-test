@@ -45,6 +45,4 @@
 
 </div>
 
-<app-toast-notification *ngIf="showToast" [message]="toastMessage" (fadedOut)="showToast = false"></app-toast-notification>
-
 <app-add-provider-dialog *ngIf="addProvider" (closing)="addProvider = false"></app-add-provider-dialog>

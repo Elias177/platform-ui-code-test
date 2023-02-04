@@ -1,9 +1,12 @@
 <div class="list-container">
 
   <div *ngFor="let provider of providerListService.getUnselectedProviders()">
-    <app-card [provider]="provider"></app-card>
+    <app-card [provider]="provider" (cardState)="showMessage($event)"></app-card>
   </div>
 
   <app-card></app-card>
 
 </div>
+
+<app-toast-notification *ngIf="showToast" [message]="toastMessage" (fadedOut)="showToast = false"></app-toast-notification>
+

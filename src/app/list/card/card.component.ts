@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ProviderListService} from '../../services/provider-list.service';
 import {ProviderObj} from '../../models/providerModel';
 
@@ -12,29 +12,23 @@ export class CardComponent {
   @Input('provider')
   provider: ProviderObj | any;
 
-  showToast = false;
-  toastMessage: string = '';
+  @Output()
+  cardState = new EventEmitter<string>;
+
   addProvider: boolean = false;
 
   constructor(private providerListService: ProviderListService) {
   }
 
   selectProvider(provider: ProviderObj) {
-    this.showToast = false;
+
     this.providerListService.selectProvider(provider);
-    this.toastMessage = 'Provider ' + provider.name + ' selected ';
-    setTimeout(() => {
-      this.showToast = true;
-    });
+    this.cardState.emit('Provider ' + provider.name + ' selected');
   }
 
   removeProvider(provider: ProviderObj) {
-    this.showToast = false;
     this.providerListService.removeProvider(provider);
-    this.toastMessage = 'Provider ' + provider.name + ' deselected';
-    setTimeout(() => {
-      this.showToast = true;
-    });
+    this.cardState.emit('Provider ' + provider.name + ' deselected');
   }
 
   addNewProvider() {

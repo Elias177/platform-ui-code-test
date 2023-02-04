@@ -12,10 +12,23 @@ export class ListComponent implements OnInit {
   public selectedProviders: ProviderObj[] = [];
   public unselectedProviders: ProviderObj[];
 
+  showToast = false;
+  toastMessage: string = '';
+
+
   constructor(public providerListService: ProviderListService) {
     this.unselectedProviders = providerListService.getUnselectedProviders();
   }
 
   ngOnInit() {}
 
+  showMessage(e: string) {
+
+    this.showToast = false
+    this.toastMessage = e;
+    setTimeout(() => {
+      this.showToast = true;
+    }, 0);
+
+  }
 }

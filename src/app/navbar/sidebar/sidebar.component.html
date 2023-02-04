@@ -19,7 +19,7 @@
 
     <div *ngIf="this.providerListService.getSelectedProviders().length > 0" class="card-container" [class.expanded]="expand" >
 
-      <app-card *ngFor="let provider of this.providerListService.getSelectedProviders()" [provider]="provider"></app-card>
+      <app-card (cardState)="showMessage($event)" *ngFor="let provider of this.providerListService.getSelectedProviders()" [provider]="provider"></app-card>
 
     </div>
 
@@ -32,3 +32,5 @@
   <div (click)="closeSide()" class="sidebar-overlay"></div>
 
 </div>
+
+<app-toast-notification *ngIf="showToast" [message]="toastMessage" (fadedOut)="showToast = false"></app-toast-notification>

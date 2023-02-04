@@ -13,6 +13,8 @@ export class SidebarComponent {
 
   expand = false;
   retract = false;
+  showToast = false;
+  toastMessage: string = '';
 
   constructor(public providerListService: ProviderListService) {
   }
@@ -43,4 +45,15 @@ export class SidebarComponent {
     }
 
   }
+
+  showMessage(e: string) {
+
+    this.showToast = false
+    this.toastMessage = e;
+    setTimeout(() => {
+      this.showToast = true;
+    }, 0);
+
+  }
+
 }
