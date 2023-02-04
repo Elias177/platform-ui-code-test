@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SidebarComponent } from './sidebar.component';
+import {CardComponent} from "../../list/card/card.component";
+import {FormatPhonePipe} from "../../pipes/format-phone.pipe";
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -8,7 +10,7 @@ describe('SidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ]
+      declarations: [ SidebarComponent, CardComponent, FormatPhonePipe ]
     })
     .compileComponents();
 
