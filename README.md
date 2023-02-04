@@ -14,7 +14,7 @@ Acceptance Criteria:
 
 # Installation
 
-- Update angular cli to latest version
+- Update Angular CLI to latest version
 - `npm install`
 - `ng serve`
 - Load the app at http://localhost:4200 
