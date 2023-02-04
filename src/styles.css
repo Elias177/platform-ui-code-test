@@ -1,1 +1,184 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Mulish', serif;
+  color: #393b4b;
+  margin: 0;
+  padding: 0 24px;
+  border: none;
+}
+
+input {
+  font-family: 'Mulish', serif;
+  font-size: 14px;
+}
+
+input[type="text"], input[type="tel"]{
+  border: none;
+  border-bottom: 2px solid  #393b4b;
+  color: #393b4b;
+}
+
+input[type="text"]:-webkit-autofill {
+  color: #393b4b;
+}
+
+input[type="tel"]:-webkit-autofill {
+  color: #393b4b;
+}
+
+input[type="text"] {
+  border-bottom: 2px solid rgba(42, 3, 86, 1);
+}
+
+input[type="button"], input[type="submit"]{
+  border: none;
+  background: rgba(42, 3, 86, .8);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 16px;
+}
+
+input[type="button"]:disabled{
+  background: rgba(76, 75, 77, 0.8) !important;
+  color: white;
+}
+
+input[type="submit"]:disabled{
+  background: rgba(76, 75, 77, 0.8) !important;
+  color: white;
+}
+
+
+input[type="button"]:hover, input[type="submit"]:hover{
+  background: rgba(42, 3, 86, 0.7);
+}
+
+input {
+  border-bottom: 2px solid rgba(42, 3, 86, 1);
+}
+
+input:focus-visible  {
+  outline: none;
+  border-bottom: 2px solid rgba(42, 3, 86, 1);
+}
+
+/*
+  Animations Start
+ */
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+.slide-out-left {
+  animation: slide-out-left 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes expand {
+
+  100% {
+    width: 130%;
+  }
+
+}
+.expand {
+  animation: expand 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@keyframes retract {
+
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 26%;
+  }
+
+}
+.retract {
+  animation: retract 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+@keyframes fade-out-grad {
+
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+
+}
+
+.fade-out-gradually {
+  animation: fade-out-grad 3s ease-in both;
+}
+
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-in-center {
+  animation: scale-in-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+.scale-out-center {
+  animation: scale-out-center 0.1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes fade-in {
+
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
+}
+
+.fade-in {
+  animation: fade-in 1s ease-in both;
+}
+
+/*
+  Animations End
+ */

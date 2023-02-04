@@ -8,12 +8,12 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class ToastNotificationComponent implements OnInit {
 
 
-  @Input() message: string;
+  @Input() message: string = '';
   @Output() fadedOut = new EventEmitter<boolean>;
 
   fading = true;
 
-  fadeTimeout;
+  fadeTimeout: any;
 
   ngOnInit(): void {
     this.fadeToast();

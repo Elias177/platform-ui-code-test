@@ -5,7 +5,7 @@ import {ProviderObj} from '../models/providerModel';
 })
 export class ProviderListService {
 
-  private selectedProviders = [];
+  private selectedProviders: ProviderObj[] = [];
   private unselectedProviders: ProviderObj[] = [
     {
       id: '1',
@@ -92,11 +92,11 @@ export class ProviderListService {
   loadState() {
 
     if (localStorage.getItem('selectedProviders')) {
-      this.selectedProviders = JSON.parse(localStorage.getItem('selectedProviders'));
+      this.selectedProviders = JSON.parse(<string>localStorage.getItem('selectedProviders'));
     }
 
     if (localStorage.getItem('unselectedProviders')) {
-      this.unselectedProviders = JSON.parse(localStorage.getItem('unselectedProviders'));
+      this.unselectedProviders = JSON.parse(<string>localStorage.getItem('unselectedProviders'));
     }
 
   }

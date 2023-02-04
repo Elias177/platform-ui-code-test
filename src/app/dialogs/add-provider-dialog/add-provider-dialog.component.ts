@@ -15,7 +15,7 @@ export class AddProviderDialogComponent {
   providerForm: FormGroup;
 
   showToast = false;
-  toastMessage: string;
+  toastMessage: string = '';
 
   constructor(private providerListService: ProviderListService) {
 
@@ -40,7 +40,7 @@ export class AddProviderDialogComponent {
 
   createProvider() {
     this.showToast = true;
-    this.toastMessage = 'Provider ' + this.providerForm.get('name').value + ' created';
+    this.toastMessage = 'Provider ' + this.providerForm.controls['name'].value + ' created';
     this.providerListService.createProvider(this.providerForm.value);
     this.providerForm.reset();
   }

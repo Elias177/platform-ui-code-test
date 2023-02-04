@@ -9,10 +9,11 @@ import {ProviderObj} from '../models/providerModel';
 })
 export class ListComponent implements OnInit {
 
-  public selectedProviders = [];
+  public selectedProviders: ProviderObj[] = [];
   public unselectedProviders: ProviderObj[];
 
   constructor(public providerListService: ProviderListService) {
+    this.unselectedProviders = providerListService.getUnselectedProviders();
   }
 
   ngOnInit() {}

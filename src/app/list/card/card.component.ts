@@ -9,11 +9,12 @@ import {ProviderObj} from '../../models/providerModel';
 })
 export class CardComponent {
 
-  @Input('provider') provider: ProviderObj;
+  @Input('provider')
+  provider: ProviderObj | any;
 
   showToast = false;
-  toastMessage: string;
-  addProvider: boolean;
+  toastMessage: string = '';
+  addProvider: boolean = false;
 
   constructor(private providerListService: ProviderListService) {
   }
