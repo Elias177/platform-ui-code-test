@@ -1,0 +1,34 @@
+<div class="sidebar-container"
+     [class.slide-in-left]="!closing"
+     [class.slide-out-left]="closing">
+
+  <div class="sidebar" [class.expand]="expand" [class.retract]="retract">
+
+    <div class="sidebar-header">
+
+      <div class="sidebar-title">
+        Saved List
+      </div>
+
+      <div class="expand-button" (click)="expandRetractbar()">
+        <span *ngIf="!expand">Expand</span>
+        <span *ngIf="expand">Retract</span>
+      </div>
+
+    </div>
+
+    <div *ngIf="this.providerListService.getSelectedProviders().length > 0" class="card-container" [class.expanded]="expand" >
+
+      <app-card *ngFor="let provider of this.providerListService.getSelectedProviders()" [provider]="provider"></app-card>
+
+    </div>
+
+    <div *ngIf="this.providerListService.getSelectedProviders().length === 0">
+      No providers are selected.
+    </div>
+
+  </div>
+
+  <div (click)="closeSide()" class="sidebar-overlay"></div>
+
+</div>

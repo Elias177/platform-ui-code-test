@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "platform-ui-code-test"
+  "defaultProject": "platform-ui-code-test",
+  "cli": {
+    "analytics": false
+  }
 }
