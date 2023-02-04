@@ -14,6 +14,7 @@ Acceptance Criteria:
 
 # Installation
 
+- Update Angular CLI to latest version
 - `npm install`
 - `ng serve`
 - Load the app at http://localhost:4200 
@@ -24,6 +25,3 @@ To test your work, run:
 
 - `ng test`
 
-# Finishing up
-
-- Please fork the repo and push your completed code to a public github repository.
