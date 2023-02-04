@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {ProviderListService} from '../../services/provider-list.service';
+import {ProviderObj} from '../../models/providerModel';
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

@@ -1,5 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import {ProviderListService} from '../services/provider-list.service';
+import {ProviderObj} from '../models/providerModel';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
